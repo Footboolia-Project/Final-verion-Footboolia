@@ -12,22 +12,38 @@ function Header() {
 
   useEffect(() => {
     setScrolling(window.scrollY > 50);
-
+  
     const handleScroll = () => {
       setScrolling(window.scrollY > 50);
     };
-
+  
     window.addEventListener('scroll', handleScroll);
+  
+    // Check if the user is logged in from localStorage
+    const storedLoggedIn = localStorage.getItem('isLoggedIn');
+    setIsLoggedIn(storedLoggedIn === 'true');
+  
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
+  
 
   const handleLogout = () => {
     console.log('Logging out');
+    
+    // Clear the authToken cookie
     document.cookie = 'authToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+  
+    // Clear authentication state in local storage
+    localStorage.removeItem('isLoggedIn');
+  
+    // Update the local state to indicate that the user is no longer logged in
     setIsLoggedIn(false);
   };
+  
+  
+  
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -87,15 +103,6 @@ function Header() {
       className="flex items-center gap-2 py-4 transition-colors duration-300 hover:text-emerald-500 focus:text-emerald-600 focus:outline-none focus-visible:outline-none lg:px-8"
       to="/store">
       <span>Store</span>
-    </Link>
-  </li>
-  <li role="none" className="flex items-stretch">
-    <Link
-      role="menuitem"
-      aria-haspopup="false"
-      className="flex items-center gap-2 py-4 transition-colors duration-300 hover:text-emerald-500 focus:text-emerald-600 focus:outline-none focus-visible:outline-none lg:px-8"
-      to="/dashboard">
-      <span>Dashboard</span>
     </Link>
   </li>
 </ul>

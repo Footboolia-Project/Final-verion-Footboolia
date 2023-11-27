@@ -524,7 +524,7 @@
       "description": "A great stadium for sports events.",
       "location": "Amman",
       "rating": 4.5,
-      "price": 25,
+      "price": 20,
       "Phone": "+962780785034",
       "timeWork": "9:00 Am - 12:00 Am",
       "images": [
@@ -535,26 +535,47 @@
     },
     {
       "id": 2,
-      "name": "Stadium B",
-      "description": "A modern stadium with excellent facilities.",
-      "location": "Irbid",
-      "rating": 4.2,
+      "name": "Montreal Stadium",
+      "description": "A great stadium for sports events.",
+      "location": "Alzarqa",
+      "rating": 4.7,
+      "price": 25,
+      "Phone": "+962780785034",
+      "timeWork": "9:00 Am - 11:00 Pm",
       "images": [
-        "path/to/image4.jpg",
-        "path/to/image5.jpg",
-        "path/to/image6.jpg"
+        "https://images.pexels.com/photos/399187/pexels-photo-399187.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "https://images.pexels.com/photos/1378425/pexels-photo-1378425.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "https://images.pexels.com/photos/399187/pexels-photo-399187.jpeg?auto=compress&cs=tinysrgb&w=600"
       ]
     },
     {
       "id": 3,
-      "name": "Stadium C",
-      "description": "An iconic stadium with a rich history.",
-      "location": "Aqaba",
+      "name": "Meydan Stadium",
+      "description": "A great stadium for sports events.",
+      "location": "Irbid",
       "rating": 4.8,
+      "price": 30,
+      "Phone": "+962780785034",
+      "timeWork": "7:00 Am - 12:00 Am",
       "images": [
-        "path/to/image7.jpg",
-        "path/to/image8.jpg",
-        "path/to/image9.jpg"
+        "https://images.pexels.com/photos/399187/pexels-photo-399187.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "https://images.pexels.com/photos/1378425/pexels-photo-1378425.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "https://images.pexels.com/photos/399187/pexels-photo-399187.jpeg?auto=compress&cs=tinysrgb&w=600"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "El Clásico Stadium",
+      "description": "A great stadium for sports events.",
+      "location": "Alzarqa",
+      "rating": 4.5,
+      "price": 25,
+      "Phone": "+962780785034",
+      "timeWork": "10:00 Am - 12:00 Am",
+      "images": [
+        "https://images.pexels.com/photos/399187/pexels-photo-399187.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "https://images.pexels.com/photos/1378425/pexels-photo-1378425.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "https://images.pexels.com/photos/399187/pexels-photo-399187.jpeg?auto=compress&cs=tinysrgb&w=600"
       ]
     }
   ],
@@ -576,7 +597,8 @@
           "date": "",
           "startTime": "",
           "endTime": "",
-          "notice": ""
+          "notice": "",
+          "status": "pending"
         }
       ],
       "id": 2
@@ -589,7 +611,8 @@
           "date": "2023-11-21",
           "startTime": "20:55",
           "endTime": "19:55",
-          "notice": "hghgh"
+          "notice": "hghgh",
+          "status": "pending"
         }
       ],
       "id": 3
@@ -717,18 +740,187 @@
         }
       ],
       "id": 12
+    },
+    {
+      "formbooking": [
+        {
+          "fullName": "",
+          "phone": "",
+          "date": "",
+          "startTime": "",
+          "endTime": "",
+          "notice": ""
+        }
+      ],
+      "id": 13
+    },
+    {
+      "formbooking": [
+        {
+          "fullName": "",
+          "phone": "",
+          "date": "",
+          "startTime": "",
+          "endTime": "",
+          "notice": ""
+        }
+      ],
+      "id": 14
+    },
+    {
+      "formbooking": [
+        {
+          "fullName": "Nidal Raed",
+          "phone": "+962780785034",
+          "date": "2023-11-24",
+          "startTime": "17:00",
+          "endTime": "19:00",
+          "notice": "Nothing"
+        }
+      ],
+      "id": 15
+    },
+    {
+      "formbooking": [
+        {
+          "fullName": "",
+          "phone": "",
+          "date": "2023-11-24",
+          "startTime": "",
+          "endTime": "",
+          "notice": ""
+        }
+      ],
+      "id": 16
+    },
+    {
+      "formbooking": [
+        {
+          "fullName": "Nidal Raed",
+          "phone": "+962780785034",
+          "date": "2023-11-15",
+          "startTime": "21:34",
+          "endTime": "22:34",
+          "notice": "jgfjgf"
+        }
+      ],
+      "id": 17
+    },
+    {
+      "formbooking": [
+        {
+          "fullName": "",
+          "phone": "",
+          "date": "",
+          "startTime": "",
+          "endTime": "",
+          "notice": ""
+        }
+      ],
+      "id": 18
+    },
+    {
+      "formbooking": [
+        {
+          "fullName": "",
+          "phone": "",
+          "date": "",
+          "startTime": "",
+          "endTime": "",
+          "notice": ""
+        }
+      ],
+      "id": 19
+    },
+    {
+      "formbooking": [
+        {
+          "fullName": "",
+          "phone": "",
+          "date": "",
+          "startTime": "",
+          "endTime": "",
+          "notice": ""
+        }
+      ],
+      "id": 20
+    },
+    {
+      "formbooking": [
+        {
+          "fullName": "",
+          "phone": "",
+          "date": "",
+          "startTime": "",
+          "endTime": "",
+          "notice": ""
+        }
+      ],
+      "id": 21
+    },
+    {
+      "formbooking": [
+        {
+          "fullName": "",
+          "phone": "",
+          "date": "",
+          "startTime": "",
+          "endTime": "",
+          "notice": ""
+        }
+      ],
+      "id": 22
+    },
+    {
+      "formbooking": [
+        {
+          "fullName": "",
+          "phone": "",
+          "date": "",
+          "startTime": "",
+          "endTime": "",
+          "notice": ""
+        }
+      ],
+      "id": 23
+    },
+    {
+      "formbooking": [
+        {
+          "fullName": "",
+          "phone": "",
+          "date": "",
+          "startTime": "",
+          "endTime": "",
+          "notice": ""
+        }
+      ],
+      "id": 24
+    },
+    {
+      "formbooking": [
+        {
+          "fullName": "",
+          "phone": "",
+          "date": "",
+          "startTime": "",
+          "endTime": "",
+          "notice": ""
+        }
+      ],
+      "id": 25
     }
   ],
   "users": [
     {
-      "username": "NidalRaed",
-      "email": "nedalraed5@gmail.com",
-      "image": "https://i.pinimg.com/280x280_RS/39/d4/77/39d47758fc973887b276f5464df10d53.jpg",
+      "full_name": "nedal",
+      "email": "nedalraed55@gmail.com",
+      "phone": "",
       "id": 1
     },
     {
       "id": 2,
-      "username": "jane_doe",
+      "full_name": "jane_doe",
       "email": "jane@example.com",
       "image": "https://i.pinimg.com/280x280_RS/39/d4/77/39d47758fc973887b276f5464df10d53.jpg"
     }
@@ -774,6 +966,136 @@
         {
           "productId": 2,
           "quantity": 3
+        }
+      ]
+    }
+  ],
+  "Catalogs": [
+    {
+      "id": 1,
+      "name": "Sports supplies",
+      "products": [
+        {
+          "id": 1,
+          "image": "https://cdn.salla.sa/wjRK/xcypAaB8XoSLIMqctvsg6K6fTFN213ZAhwg6wXZN.jpg",
+          "title": "Nike football boots",
+          "price": 41.99,
+          "originalPrice": 45.99,
+          "buttonText": "Add To Cart"
+        },
+        {
+          "id": 2,
+          "image": "https://cdn.salla.sa/wjRK/xcypAaB8XoSLIMqctvsg6K6fTFN213ZAhwg6wXZN.jpg",
+          "title": "Inter Miami Messi boys' kit 2023/2024",
+          "price": 18.99,
+          "originalPrice": 20.99,
+          "buttonText": "Add To Cart"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Football shoes",
+      "products": [
+        {
+          "id": 3,
+          "image": "https://cdn.salla.sa/wjRK/qz7VJA1psBIMNCnoGkt3G9TaYBRP0m21iXEVEDjE.jpg",
+          "title": "Pink Tshirt With Braided Sweater Pattern",
+          "price": 299.99,
+          "originalPrice": 399.99,
+          "buttonText": "Add To Cart"
+        },
+        {
+          "id": 4,
+          "image": "https://cdn.salla.sa/wjRK/m0ev2BE7aAzZgJP2MQvuE14LdGXdECSipI3aNy8M.jpg",
+          "title": "Pink Tshirt With Braided Sweater Pattern",
+          "price": 299.99,
+          "originalPrice": 399.99,
+          "buttonText": "Add To Cart"
+        },
+        {
+          "id": 4,
+          "image": "https://cdn.salla.sa/wjRK/nk2H0ynhS1pEFfmhupr1mqabVVhlHWQRelqF2Ycj.jpg",
+          "title": "Pink Tshirt With Braided Sweater Pattern",
+          "price": 299.99,
+          "originalPrice": 399.99,
+          "buttonText": "Add To Cart"
+        },
+        {
+          "id": 4,
+          "image": "https://cdn.salla.sa/KzZjB/9YVLgIw4hxv6R6l3FzEbTkILKVm7EYr1wcAPKtuC.jpg",
+          "title": "Pink Tshirt With Braided Sweater Pattern",
+          "price": 299.99,
+          "originalPrice": 399.99,
+          "buttonText": "Add To Cart"
+        },
+        {
+          "id": 4,
+          "image": "https://cdn.salla.sa/AVrmy/SGC1TeQim9npOwGUIL8LzzEGRZmlozPL3Ny1JBaq.jpg",
+          "title": "Pink Tshirt With Braided Sweater Pattern",
+          "price": 299.99,
+          "originalPrice": 399.99,
+          "buttonText": "Add To Cart"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Player category",
+      "products": [
+        {
+          "id": 5,
+          "image": "https://cdn.salla.sa/wjRK/yYoqwLiT5ZxoAimtolwe4NPhe7awJDhtsk1vBidu.jpg",
+          "title": "Pink Tshirt With Braided Sweater Pattern",
+          "price": 299.99,
+          "originalPrice": 399.99,
+          "buttonText": "Add To Cart"
+        },
+        {
+          "id": 6,
+          "image": "https://cdn.salla.sa/KzZjB/fJDb9fcK7rluuHaDKh2At4jNLyuvkKa2tPrHKfRy.jpg",
+          "title": "Pink Tshirt With Braided Sweater Pattern",
+          "price": 299.99,
+          "originalPrice": 399.99,
+          "buttonText": "Add To Cart"
+        },
+        {
+          "id": 7,
+          "image": "https://cdn.salla.sa/wjRK/AeainEIsUfT9cl5lTnyzQxW7WGNMBg7gDBqkud28.jpg",
+          "title": "Pink Tshirt With Braided Sweater Pattern",
+          "price": 299.99,
+          "originalPrice": 399.99,
+          "buttonText": "Add To Cart"
+        },
+        {
+          "id": 8,
+          "image": "https://cdn.salla.sa/wjRK/l1o0XTKNvK40mC9Qv0zAVPU2HORJqQadwUu5bXAt.jpg",
+          "title": "Pink Tshirt With Braided Sweater Pattern",
+          "price": 299.99,
+          "originalPrice": 399.99,
+          "buttonText": "Add To Cart"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Sportswear",
+      "products": [
+        {
+          "id": 9,
+          "image": "https://cdn.salla.sa/KzZjB/M68kFTu0C8UIeK4ORKcYL7f3nHpderraMK8QOrCq.jpg",
+          "title": "Pink Tshirt With Braided Sweater Pattern",
+          "price": 299.99,
+          "originalPrice": 399.99,
+          "buttonText": "Add To Cart"
+        },
+        {
+          "id": 10,
+          "image": "https://cdn.salla.sa/KzZjB/fJDb9fcK7rluuHaDKh2At4jNLyuvkKa2tPrHKfRy.jpg",
+          "title": "Pink Tshirt With Braided Sweater Pattern",
+          "price": 299.99,
+          "originalPrice": 399.99,
+          "buttonText": "Add To Cart"
         }
       ]
     }

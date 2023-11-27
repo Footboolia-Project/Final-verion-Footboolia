@@ -55,6 +55,12 @@ function Shosepro({ onAddToCart, onAddToWishlist }) {
 
   return (
     <div>
+               <div className="best-seller-section mt-16">
+          <h1 className="best-seller-title">Shose Sport</h1>
+          <hr className="orange-line mt-20" />
+          
+        </div>
+
       {error && <div>Error: {error}</div>}
       <section className="flex items-center py-20 bg-white lg:h-screen dark:bg-gray-800">
         <div className="px-4 mx-auto max-w-7xl mb-16">

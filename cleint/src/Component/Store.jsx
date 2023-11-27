@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+
+// استيراد المكونات الخاصة بالصفحة
 import Header from '../HomeStore/Header1';
 import HeroStore from '../HomeStore/HeroStore';
 import Category from '../HomeStore/Category';
@@ -13,55 +16,70 @@ import Hproduct from '../HomeStore/Hproduct';
 import WoHpro from '../HomeStore/WoHpro';
 import OpinCs from '../HomeStore/OpinCs';
 import Wocs from '../HomeStore/Wocs';
+import Banner from '../HomeStore/Banner';
 
 function Store() {
+  // الحالات والمتغيرات
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   const [cartCount, setCartCount] = useState(0);
   const [heartCount, setHeartCount] = useState(0);
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    // Fetch data from the server when the component mounts
-    // Adjust the API endpoint based on your server setup
-    fetch('http://localhost:3010/Product')
-      .then(response => response.json())
-      .then(data => setProducts(data))
-      .catch(error => console.error('Error fetching product data:', error));
+    // استدعاء البيانات من الخادم باستخدام Axios
+    axios.get('http://localhost:3010/Product')
+      .then(response => {
+        setProducts(response.data);
+        setLoading(false);
+      })
+      .catch(error => {
+        console.error('Error fetching product data:', error);
+        setError(error);
+        setLoading(false);
+      });
   }, []);
 
   const handleAddToCart = () => {
-    // Update the cart count when a product is added to the cart
+    // إضافة إلى السلة
     setCartCount(cartCount + 1);
   };
 
   const handleAddToWishlist = () => {
-    // Update the wishlist count when a product is added to the wishlist
+    // إضافة إلى قائمة الرغبات
     setHeartCount(heartCount + 1);
   };
 
   return (
     <div>
+      <Banner/>
+      {/* رأس الصفحة */}
       <Header cartCount={cartCount} heartCount={heartCount} />
+
+      {/* بقية المكونات */}
       <HeroStore />
       <WoCatogery />
       <Category />
       <br></br><br></br><br></br><br></br>
-      <BestSa/>
-      {/* Render BestSalary only if products are available */}
+
+      {/* أفضل الرواتب */}
+      <BestSa />
       {products.length > 0 && <BestSalary onAddToCart={handleAddToCart} onAddToWishlist={handleAddToWishlist} />}
 
-      <Adssec/>
-      <Shose/>
-
+      {/* إعلانات */}
+      <Adssec />
+      <Shose />
       {products.length > 0 && <Shosepro onAddToCart={handleAddToCart} onAddToWishlist={handleAddToWishlist} />}
 
-      <BarAds/>
-
+      <BarAds />
       <WoHpro/>
 
-      {products.length > 0 && <Hproduct onAddToCart={handleAddToCart} onAddToWishlist={handleAddToWishlist}/>} 
-      <Wocs/>
+{products.length > 0 && <Hproduct onAddToCart={handleAddToCart} onAddToWishlist={handleAddToWishlist}/>} 
+      {/* مكونات أخرى */}
+      {/* ... */}
 
-      <OpinCs/>
+      <Wocs />
+      <OpinCs />
     </div>
   );
 }

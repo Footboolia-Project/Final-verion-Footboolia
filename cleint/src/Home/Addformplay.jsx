@@ -9,14 +9,16 @@ const Addformplay = () => {
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
-    fullName: '',
+    name: '',
     phone: '',
     location: '',
     city: '',
+    size:'',
+    price:'',
     startTime: '',
     endTime: '',
     notice: '',
-    images: Array(4).fill(''), // An array to store image URLs
+    images: Array(4).fill(''),
   });
 
   const handleChange = (e) => {
@@ -149,6 +151,41 @@ const Addformplay = () => {
               className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-emerald-500 outline-none focus:border-emerald-500 focus:shadow-md"
               onChange={handleChange}
             />
+          </div>
+          <div className="-mx-3 flex flex-wrap">
+            <div className="w-full px-3 sm:w-1/2">
+              <div className="mb-5">
+                <label
+                  htmlFor="price"
+                  className="mb-3 block text-base font-medium text-[#07074D]"
+                >
+                  price
+                </label>
+                <input
+                  type="number"
+                  name="price"
+                  id="price"
+                  className="w-full rounded-md border border-emerald-500 bg-white py-3 px-6 text-base font-medium text-emerald-500 outline-none focus:border-emerald-500 focus:shadow-md"
+                />
+              </div>
+            </div>
+            <div className="w-full px-3 sm:w-1/2">
+              <div className="mb-5">
+                <label
+                  htmlFor="size"
+                  className="mb-3 block text-base font-medium text-[#07074D]"
+                >
+                  size
+                </label>
+                <input
+                  type="size"
+                  name="size"
+                  id="size"
+                  className="w-full rounded-md border border-emerald-500 bg-white py-3 px-6 text-base font-medium text-emerald-500 outline-none focus:border-emerald-500 focus:shadow-md"
+                  onChange={handleChange}
+                />
+              </div>
+            </div>
           </div>
           <div className="-mx-3 flex flex-wrap">
             <div className="w-full px-3 sm:w-1/2">

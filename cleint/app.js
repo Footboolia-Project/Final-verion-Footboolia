@@ -52,7 +52,7 @@ app.post('/login', async (req, res) => {
       return res.status(401).json({ message: 'Invalid credentials' });
     }
 
-    const token = jwt.sign({ user_id: user.user_id, email: user.email, user_role: user.user_role }, secretKey, { expiresIn: '10d' });
+    const token = jwt.sign({ user_id: user.user_id, email: user.email, user_role: user.user_role, full_name:user.full_name }, secretKey, { expiresIn: '10d' });
 
     res.json({ token });
   } catch (error) {
@@ -448,7 +448,7 @@ app.get('/user-profile', authenticateToken, async (req, res) => {
 });
 
 // تحديث بيانات المستخدم
-app.put('/update-user-profile', authenticateToken, async (req, res) => {
+app.put('/update-user', authenticateToken, async (req, res) => {
   const { user_id } = req.user;
   const { full_name, email, phone } = req.body;
 
@@ -524,8 +524,7 @@ app.post('/contact', async (req, res) => {
     const mailOptions = {
       from: "",
       to: email,
-      subject: `replay 
-      `,
+      subject: `replay`,
       text: `thankyou`
     };
 

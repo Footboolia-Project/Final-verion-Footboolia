@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import bacjer from '../img/bacjer.PNG';
 
 function Cardsground() {
   const [latestCards, setLatestCards] = useState([]);
@@ -32,18 +31,18 @@ function Cardsground() {
 
   return (
     <div
-      style={{
-        backgroundImage: `url(${bacjer})`,
-        backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat',
-        backgroundPosition: 'center',
-        width: '90%',
-        margin: 'auto',
-        display: 'flex',
-        justifyContent: 'space-around',
-        flexWrap: 'wrap',
-        alignItems: 'center', // Center items vertically
-      }}
+    style={{
+      width: '90%',
+      margin: 'auto',
+      display: 'flex',
+      justifyContent: 'space-around',
+      flexWrap: 'wrap',
+      alignItems: 'center', // Center items vertically
+      backgroundColor: '#20EA52',
+      backgroundImage: 'url("data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100%25\' height=\'100%25\' viewBox=\'0 0 1600 800\'%3E%3Cg stroke=\'%23000000\' stroke-width=\'66.7\' stroke-opacity=\'0.08\' %3E%3Ccircle fill=\'%2320EA52\' cx=\'0\' cy=\'0\' r=\'1800\'/%3E%3Ccircle fill=\'%2321db4e\' cx=\'0\' cy=\'0\' r=\'1700\'/%3E%3Ccircle fill=\'%2322cc4a\' cx=\'0\' cy=\'0\' r=\'1600\'/%3E%3Ccircle fill=\'%2322bd46\' cx=\'0\' cy=\'0\' r=\'1500\'/%3E%3Ccircle fill=\'%2323ae42\' cx=\'0\' cy=\'0\' r=\'1400\'/%3E%3Ccircle fill=\'%2322a03d\' cx=\'0\' cy=\'0\' r=\'1300\'/%3E%3Ccircle fill=\'%23229139\' cx=\'0\' cy=\'0\' r=\'1200\'/%3E%3Ccircle fill=\'%23218335\' cx=\'0\' cy=\'0\' r=\'1100\'/%3E%3Ccircle fill=\'%23207631\' cx=\'0\' cy=\'0\' r=\'1000\'/%3E%3Ccircle fill=\'%231f682c\' cx=\'0\' cy=\'0\' r=\'900\'/%3E%3Ccircle fill=\'%231e5b28\' cx=\'0\' cy=\'0\' r=\'800\'/%3E%3Ccircle fill=\'%231c4e23\' cx=\'0\' cy=\'0\' r=\'700\'/%3E%3Ccircle fill=\'%2319421f\' cx=\'0\' cy=\'0\' r=\'600\'/%3E%3Ccircle fill=\'%2317351b\' cx=\'0\' cy=\'0\' r=\'500\'/%3E%3Ccircle fill=\'%23142a16\' cx=\'0\' cy=\'0\' r=\'400\'/%3E%3Ccircle fill=\'%23111e11\' cx=\'0\' cy=\'0\' r=\'300\'/%3E%3Ccircle fill=\'%23091309\' cx=\'0\' cy=\'0\' r=\'200\'/%3E%3Ccircle fill=\'%23000100\' cx=\'0\' cy=\'0\' r=\'100\'/%3E%3C/g%3E%3C/svg%3E")',
+      backgroundAttachment: 'fixed',
+      backgroundSize: 'cover',
+    }}
       className="relative mt-10 p-2 rounded-lg"
     >
       {latestCards.map((card) => (

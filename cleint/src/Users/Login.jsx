@@ -34,6 +34,9 @@ function Login() {
           showConfirmButton: false,
           timer: 1500,
         });
+
+localStorage.setItem('isLoggedIn', 'true');
+
   
         navigate('/');
       }

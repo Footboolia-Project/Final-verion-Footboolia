@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';  // استيراد useNavigate
 
 function BestSalary({ onAddToCart, onAddToWishlist }) {
   const [products, setProducts] = useState([]);
@@ -30,6 +30,8 @@ function BestSalary({ onAddToCart, onAddToWishlist }) {
       pauseOnHover: true,
       draggable: true,
     });
+
+    // بمجرد إضافة المنتج إلى العربة، قم بتوجيه المستخدم إلى صفحة العربة
   };
 
   const handleAddToWishlist = (product) => {
@@ -45,15 +47,16 @@ function BestSalary({ onAddToCart, onAddToWishlist }) {
     });
   };
 
+
   return (
     <div>
       {error && <div>Error: {error}</div>}
-      <section className="flex items-center py-20 bg-white lg:h-screen dark:bg-gray-800">
-        <div className="px-4 mx-auto max-w-7xl">
-          <div className="grid grid-cols-1 gap-4 lg:gap-6 sm:gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <section className="flex items-center py-20 bg-white lg:h-screen dark:bg-gray-800 ">
+        <div className="px-4 mx-auto max-w-7xl mt-12">
+          <div className="grid grid-cols-1 gap-4 lg:gap-6 sm:gap-4 sm:grid-cols-2 lg:grid-cols-4 ">
             {products.map((product, index) => (
-              <div key={index} className="relative overflow-hidden bg-white shadow rounded-xl dark:bg-gray-700">
-                <div className="relative overflow-hidden">
+              <div key={index} className="relative overflow-hidden bg-white shadow rounded-xl dark:bg-gray-700 mt-12">
+                <div className="relative overflow-hidden ">
                   <div className="mb-5 overflow-hidden">
                     <img
                       className="object-cover w-full mx-auto transition-all rounded h-72 hover:scale-110"
@@ -62,7 +65,9 @@ function BestSalary({ onAddToCart, onAddToWishlist }) {
                     />
                   </div>
                   <button
-                    onClick={() => handleAddToWishlist(product)}
+                    onClick={() => {
+                      handleAddToWishlist(product);
+                    }}
                     className="absolute top-0 left-0 p-3 bg-emerald-500 rounded-l-none hover:bg-emerald-600 rounded-t-xl "
                   >
                     <svg

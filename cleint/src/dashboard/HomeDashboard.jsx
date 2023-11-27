@@ -123,7 +123,7 @@ function HomeDashboard() {
                       fill="currentColor"
                     />
                   </svg>
-                  <span>2%</span>
+                  <span>30%</span>
                 </div>
               </div>
               <span className="block text-center text-gray-500">

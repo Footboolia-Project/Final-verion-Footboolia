@@ -50,7 +50,7 @@ function HeroStore() {
   };
 
   return (
-    <Slider {...settings} className="relative">
+    <Slider {...settings} className="relative mt-64">
       <img
         src="https://cdn.sportshop.com/convert/storage/gallery/hero_desktop/1695105026Slider-Desktop_1903x635px-Voetbal-COM.jpg"
         alt="Football"

@@ -40,7 +40,7 @@ function Stor() {
           width: "15px",
           height: "15px",
           borderRadius: "50%",
-          background: activeIndex === i ? "#1A9247" : "#ddd", // خضراء إذا كانت الصورة فعّالة
+          background: activeIndex === i ? "#1A9247" : "#ddd",
           margin: "0 8px",
         }}
       />
@@ -49,23 +49,25 @@ function Stor() {
   };
 
   return (
-    <Slider {...settings} className="relative">
-      <img
-        src="https://cdn.sportshop.com/convert/storage/gallery/hero_desktop/1695105026Slider-Desktop_1903x635px-Voetbal-COM.jpg"
-        alt="Football"
-        className="h-full w-[80%] object-cover rounded-xl"
-      />
-      <img
-        src="https://cdn.sportshop.com/convert/storage/gallery/hero_desktop/1695105027Slider-Desktop_1903x635px-Running-COM.jpg"
-        alt="Running"
-        className="h-full w-full object-cover rounded-xl"
-      />
-      <img
-        src="https://cdn.sportshop.com/convert/storage/gallery/hero_desktop/1695105027Slider-Desktop_1903x635px-Tennis-COM.jpg"
-        alt="Tennis"
-        className="h-full w-full object-cover rounded-xl"
-      />
-    </Slider>
+    <div style={{ width: "90%", margin: "auto" }}>
+      <Slider {...settings} className="relative">
+        <img
+          src="https://cdn.sportshop.com/convert/storage/gallery/hero_desktop/1695105026Slider-Desktop_1903x635px-Voetbal-COM.jpg"
+          alt="Football"
+          className="h-full w-full object-cover rounded-xl"
+        />
+        <img
+          src="https://cdn.sportshop.com/convert/storage/gallery/hero_desktop/1695105027Slider-Desktop_1903x635px-Running-COM.jpg"
+          alt="Running"
+          className="h-full w-full object-cover rounded-xl"
+        />
+        <img
+          src="https://cdn.sportshop.com/convert/storage/gallery/hero_desktop/1695105027Slider-Desktop_1903x635px-Tennis-COM.jpg"
+          alt="Tennis"
+          className="h-full w-full object-cover rounded-xl"
+        />
+      </Slider>
+    </div>
   );
 }
 

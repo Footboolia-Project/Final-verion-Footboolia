@@ -3,27 +3,36 @@ import axios from 'axios';
 
 const Profile = () => {
   const [userId, setUserId] = useState(1);
+  const [full_name, setFullName] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [formbookingData, setFormBookingData] = useState([]);
+  const [wishlistData, setWishlistData] = useState([]);
+
   const [userData, setUserData] = useState({
     image: '',
   });
-
   const [newUserData, setNewUserData] = useState({
-    username: '',
+    full_name: '',
     email: '',
-    image: null,
+    phone: ''
   });
-
   const [userImage, setUserImage] = useState('');
-
   const [activeTab, setActiveTab] = useState('EditProfile');
-  const [wishlistData, setWishlistData] = useState(null);
-  const [formbookingData, setFormbookingData] = useState(null);
+  
 
   const fetchUserData = () => {
-    axios.get(`http://localhost:3010/users/${userId}`)
+    axios.get(`http://localhost:2000/user-profile/${userId}`)
       .then(response => {
         setUserData(response.data);
-        setNewUserData({ username: response.data.username, email: response.data.email });
+        setFullName(response.data.full_name);
+        setEmail(response.data.email);
+        setPhone(response.data.phone);
+        setNewUserData({
+          full_name: response.data.full_name,
+          email: response.data.email,
+          phone: response.data.phone
+        });
         setUserImage(`http://localhost:3010/users/${response.data.image}`);
       })
       .catch(error => {
@@ -31,36 +40,10 @@ const Profile = () => {
       });
   };
 
-  const fetchWishlistData = () => {
-    axios.get(`http://localhost:3010/users/${userId}/wishlist`)
-      .then(response => {
-        setWishlistData(response.data);
-      })
-      .catch(error => {
-        console.error('Error fetching wishlist data: ', error);
-      });
-  };
-
-  const fetchFormbookingData = () => {
-    axios.get(`http://localhost:3010/formbooking/${userId}/formbooking`)
-      .then(response => {
-        setFormbookingData(response.data);
-      })
-      .catch(error => {
-        console.error('Error fetching order history data: ', error);
-      });
-  };
-
-  useEffect(() => {
-    fetchUserData();
-    fetchWishlistData();
-    fetchFormbookingData();
-  }, [userId]);
-
   const handleSaveDataChanges = () => {
     console.log('New User Data:', newUserData);
   
-    axios.put(`http://localhost:3010/users/${userId}`, newUserData)
+    axios.put(`http://localhost:2000/user-profile/${userId}`, newUserData)
       .then(response => {
         alert('Data changes saved successfully');
         console.log('Response data:', response.data);
@@ -69,7 +52,6 @@ const Profile = () => {
         console.error('Error saving data changes: ', error);
       });
   };
-  
 
   const handleSaveImageChanges = () => {
     console.log('New User Image:', newUserData.image);
@@ -89,37 +71,60 @@ const Profile = () => {
         console.error('Error saving image changes: ', error);
       });
   };
-  
-  
-  
 
   const handleImageChange = (e) => {
     if (e.target.files.length > 0) {
+      const selectedImage = e.target.files[0];
       setNewUserData({
         ...newUserData,
-        image: e.target.files[0],
+        image: selectedImage,
       });
-      setUserImage(URL.createObjectURL(e.target.files[0]));
+      setUserImage(URL.createObjectURL(selectedImage));
     }
   };
-  
-  const changeUserId = (newUserId) => {
-    setUserId(newUserId);
-  };
+
+  useEffect(() => {
+    fetchUserData();
+  }, [userId]);
+
+  useEffect(() => {
+    // جلب البيانات وتحديث formbookingData
+    axios.get('http://localhost:3010/formbooking')
+      .then(response => {
+        setFormBookingData(response.data);
+      })
+      .catch(error => {
+        console.error('Error fetching form booking data: ', error);
+      });
+  }, []);
+
+  useEffect(() => {
+    // جلب البيانات وتحديث wishlistData
+    axios.get('http://example.com/api/wishlist')
+      .then(response => {
+        setWishlistData(response.data);
+      })
+      .catch(error => {
+        console.error('Error fetching wishlist data: ', error);
+      });
+  }, []); 
 
   return (
     <div>
       <div className="sm mt-20">
-        <div className="text-center p-4">
-          <img
-            src={userImage || "https://i.pinimg.com/280x280_RS/39/d4/77/39d47758fc973887b276f5464df10d53.jpg"}
-            
-            className="h-32 w-32 rounded-full mx-auto"
-          />
-          <span className="font-medium text-gray-900">{userData.username}</span><br></br>
-          <span className="text-gray-500">{userData.email}</span>
-        </div>
-      </div>
+      <div className="text-center p-4">
+  <img
+    src={userImage || "https://i.pinimg.com/280x280_RS/39/d4/77/39d47758fc973887b276f5464df10d53.jpg"}
+    className="h-32 w-32 rounded-full mx-auto"
+  />
+  <div className="mt-4">
+    <span className="font-medium text-gray-900">{full_name}</span><br />
+    <span className="text-gray-500">{email}</span><br />
+    <span className="text-gray-500">{phone}</span>
+  </div>
+</div>
+</div>
+
 
       <ul className="text-sm font-medium text-center text-emerald-500 divide-x divide-gray-200 rounded-lg shadow sm:flex dark:divide-emerald-700 dark:text-emerald-400">
         <li className="w-full">
@@ -179,8 +184,8 @@ const Profile = () => {
                 <input
                   className="w-full py-2 px-3 border border-emerald-300 rounded-md focus:outline-none focus:border-emerald-500"
                   type="text"
-                  value={newUserData.username}
-                  onChange={(e) => setNewUserData({ ...newUserData, username: e.target.value })}
+                  value={newUserData.full_name}
+                  onChange={(e) => setNewUserData({ ...newUserData, full_name: e.target.value })}
                 />
               </div>
 
@@ -189,6 +194,16 @@ const Profile = () => {
                 <input
                   className="w-full py-2 px-3 border border-emerald-300 rounded-md focus:outline-none focus:border-emerald-500"
                   type="password"
+                />
+              </div>
+
+              <div className="mb-4">
+                <label className="text-emerald-600 dark:text-emerald-400 block">Phone</label>
+                <input
+                  className="w-full py-2 px-3 border border-emerald-300 rounded-md focus:outline-none focus:border-emerald-500"
+                  type="phone"
+                  value={newUserData.phone}
+                  onChange={(e) => setNewUserData({ ...newUserData, phone: e.target.value })}
                 />
               </div>
 

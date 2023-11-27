@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import toast from 'react-hot-toast';
+import { Link, useNavigate} from 'react-router-dom';
 
 const PaymentForm = () => {
   const [selectedType, setSelectedType] = useState('type1');
@@ -9,6 +10,7 @@ const PaymentForm = () => {
   const [expirationYear, setExpirationYear] = useState('2023');
   const [securityCode, setSecurityCode] = useState('');
   const [errors, setErrors] = useState({});
+  const navigate = useNavigate();
 
   const handleTypeChange = (type) => {
     setSelectedType(type);
@@ -74,7 +76,7 @@ const PaymentForm = () => {
 
       // Show toast alert
       toast.success('Payment submitted successfully! Redirecting to details page.');
-
+      navigate('/done');
       // Redirect to details page after a short delay
       // history.push('/details'); // Update with your actual details page path
     }
@@ -212,14 +214,15 @@ const PaymentForm = () => {
             </div>
           </>
         )}
-        <div>
+       <Link to='/done'> <div>
+          
           <button
             className="block w-full max-w-xs mx-auto bg-emerald-500 hover:bg-emerald-700 focus:bg-emerald-700 text-white rounded-lg px-3 py-3 font-semibold"
             onClick={handlePaymentSubmit}
           >
             <i className="mdi mdi-lock-outline mr-1"></i> Book NOW
           </button>
-        </div>
+        </div></Link>
       </div>
     </div>
   );

@@ -35,16 +35,16 @@ export default function OpinCs() {
   return (
     <>
       {/*<!-- Component: Testimonial carousel --> */}
-      <div className="glide-08 relative w-full">
+      <div className="glide-08 relative w-full overflow-x-hidden overflow-Y-hidden overflow-hidden">
         {/*    <!-- Slides --> */}
         <div data-glide-el="track">
-          <ul className="whitespace-no-wrap flex-no-wrap [backface-visibility: hidden] [transform-style: preserve-3d] [touch-action: pan-Y] [will-change: transform] relative flex w-[60%] overflow-hidden p-0 pb-12">
+          <ul className="whitespace-no-wrap flex-no-wrap [backface-visibility: hidden] [transform-style: preserve-3d] [touch-action: pan-Y] [will-change: transform] relative flex w-[60%] -hidden p-0 pb-12 " >
             <li>
-              <div className="h-full w-full">
+              <div className="h-[60%] w-full">
                 {/*                    <!-- Start Testimonial --> */}
                 <div className="h-full overflow-hidden rounded bg-white text-slate-500 shadow-2xl shadow-slate-200">
                   <div className="relative p-6">
-                    <figure className="relative z-10">
+                    <figure className="relative z-10 ">
                       <blockquote className="p-6 text-lg leading-relaxed">
                         <p>
                           Wind-ui, is probably one of the best libraries I've
